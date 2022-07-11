@@ -43,7 +43,7 @@ for filename in filenameList:
             os.remove(outputpath)
     
         #输出beat
-        y, sr = librosa.load(temppath , duration=120)
+        y, sr = librosa.load(temppath)
         tempo, beats = librosa.beat.beat_track(y=y, sr=sr)
         array1 = librosa.frames_to_time(beats, sr=sr)
         fp = open(outputpath,"a")
