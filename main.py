@@ -46,7 +46,13 @@ for filename in filenameList:
         y, sr = librosa.load(temppath)
         tempo, beats = librosa.beat.beat_track(y=y, sr=sr)
         array1 = librosa.frames_to_time(beats, sr=sr)
+        arryStr = "["
+        for ss in array1:
+            arryStr = arryStr+ str(ss) + ","
+        else:
+            arryStr = arryStr[:-2]
+            arryStr = arryStr + "]"
         fp = open(outputpath,"a")
-        fp.write(str(array1))
+        fp.write(arryStr)
         fp.close()
         
