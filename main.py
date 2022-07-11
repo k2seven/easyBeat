@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """
 Created on Fri Oct 22 13:57:01 2021
 
@@ -43,7 +43,7 @@ for filename in filenameList:
             os.remove(outputpath)
     
         #输出beat
-        y, sr = librosa.load(temppath , duration=10)
+        y, sr = librosa.load(temppath , duration=120)
         tempo, beats = librosa.beat.beat_track(y=y, sr=sr)
         array1 = librosa.frames_to_time(beats, sr=sr)
         fp = open(outputpath,"a")
